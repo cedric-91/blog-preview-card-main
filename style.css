@@ -1,3 +1,58 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"); */
+
+:root {
+	/* Colours */
+	--clr-yelow-primary: hsl(47, 88%, 63%);
+	--clr-white-primary: hsl(0, 0%, 100%);
+	--clr-grey-500: hsl(0, 0%, 42%);
+	--clr-grey-900: hsl(0, 0%, 7%);
+
+	/* Fonts Weights */
+	--fw-normal: 500;
+	--fw-bold: 800;
+
+	/* Fonts Size */
+	--fz-default: 16px;
+
+	/* Whitespaces */
+	--gap-small: 0.75rem;
+	--gap-medium: 1.25rem;
+	--gap-large: 1.6rem;
+
+	/* Border Radius */
+	--br-r: 0.85rem;
+}
+
+@font-face {
+	font-family: "Figtree";
+	src: url("./assets/fonts/static/Figtree-Medium.ttf") format("truetype");
+	font-weight: var(--fw-normal);
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Figtree";
+	src: url("./assets/fonts/static/Figtree-ExtraBold.ttf") format("truetype");
+	font-weight: var(--fw-bold);
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Figtree";
+	src: url("./assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+	font-weight: var(--fw-normal);
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Figtree";
+	src: url("./assets/fonts/Figtree-Italic-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: var(--fw-normal);
+	font-optical-sizing: auto;
+	font-style: italic;
+}
+
 /* Josh Comeau CSS Reset */
 /* 1. Use a more-intuitive box-sizing model */
 *,
@@ -66,7 +121,93 @@ h5,
 h6 {
 	text-wrap: balance;
 }
-
-html:where(body) {
+/* STYLES */
+html,
+body {
 	min-height: 100svh;
+	font-family: "Figtree", sans-serif;
+	font-size: 1rem;
+}
+body {
+	display: grid;
+	place-items: center;
+	background-color: var(--clr-yelow-primary);
+}
+article {
+	--default-w: 327px;
+	--default-h: 500px;
+
+	display: grid;
+	background-color: var(--clr-white-primary);
+	border: 1px solid var(--clr-grey-900);
+	border-radius: var(--br-r);
+	width: min(
+		100%,
+		var(--default-w, fit-content)
+	); /* max-width: 327px, width: 100% */
+	padding: 1.4rem;
+	min-height: max-content;
+	gap: var(--gap-medium);
+	box-shadow: 8px 8px var(--clr-grey-900);
+}
+article:hover .header {
+	color: var(--clr-yelow-primary);
+	cursor: pointer;
+}
+.article__img {
+	object-fit: cover;
+	font-style: italic;
+	border-radius: var(--br-r);
+}
+.category {
+	--padding-y: 0.25em;
+	--padding-x: 1em;
+	--fs-sm: 0.85rem;
+	--br-r: 0.3rem;
+
+	display: grid;
+	gap: 0.75rem;
+}
+.category__title {
+	background-color: var(--clr-yelow-primary);
+	color: var(--clr-grey-900);
+	font-weight: var(--fw-bold);
+	border-radius: var(--br-r);
+	font-size: var(--fs-sm);
+	padding-block: var(--padding-y);
+	padding-inline: var(--padding-x);
+	min-height: 1.4rem;
+	width: fit-content;
+}
+.content {
+	display: grid;
+	gap: var(--gap-small);
+}
+.header {
+	font-weight: var(--fw-bold);
+	font-size: 1.25rem;
+}
+.plublished {
+	font-size: var(--fs-sm);
+	font-weight: var(--fw-normal);
+}
+.copy {
+	font-size: var(--fs-sm, 0.85rem);
+	color: var(--clr-grey-500);
+	font-weight: var(--fw-normal);
+}
+.author {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.author__img-wrapper {
+	width: 35px;
+	height: 35px;
+}
+.author__img {
+	height: 100%;
+}
+.author__name {
+	font-weight: var(--fw-bold);
 }
