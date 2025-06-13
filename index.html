@@ -17,33 +17,37 @@
 		<article>
 			<img
 				src="./assets/images/illustration-article.svg"
-				alt="illustration-article"
+				alt=""
 				width="336"
 				height="201"
 				class="article__img"
 			/>
-			<section class="content">
-				<div class="category" role="group">
-					<span class="category__title">Learning</span>
-					<p class="plublished">Published 21 Dec 2023</p>
+			<section class="content" aria-label="article content">
+				<div class="category" role="region">
+					<span class="category__title" aria-label="category title"
+						>Learning</span
+					>
+					<p class="published">
+						Published <time datetime="2023-12-21">21 Dec 2023</time>
+					</p>
 				</div>
-				<h3 class="header">HTML & CSS foundations</h3>
+				<h2 class="header">HTML & CSS foundations</h2>
 				<p class="copy">
 					These languages are the backbone of every website, defining structure,
 					content, and presentation.
 				</p>
 			</section>
-			<div class="author" role="group">
+			<div class="author" aria-label="author info">
 				<div class="author__img-wrapper">
 					<img
 						src="./assets/images/image-avatar.webp"
-						alt="avator"
+						alt="author image"
 						width="64"
 						height="65"
 						class="author__img"
 					/>
 				</div>
-				<span class="author__name">Greg Hooper</span>
+				<span class="author__name" aria-label="author name">Greg Hooper</span>
 			</div>
 		</article>
 	</body>
